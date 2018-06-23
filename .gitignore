@@ -111,7 +111,7 @@ $RECYCLE.BIN/
 lib/
 data/
 config/constants.js
-config/jwtRS512.key
-config/jwtRS512.key.pub
+config/jwt.key
+config/jwt.key.pub
 
 .DS_Store
