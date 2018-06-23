@@ -13,17 +13,32 @@ var UserSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-    required: true,
     bcrypt: true,
   },
-  favoriteCountries:[{
-    type: Schema.Types.ObjectId, ref: 'Country',
+  favoriteCountries: [{
+    type: mongoose.Schema.Types.ObjectId, ref: 'Country',
     favorite: {
       type: Boolean,
       required: true,
       default: false
     }
   }],
+  google: {
+    profileId: String,
+    image: String,
+    refreshToken: String,
+    firstName: String,
+    lastName: String,
+    email: String
+  },
+  facebook: {
+    profileId: String,
+    image: String,
+    refreshToken: String,
+    firstName: String,
+    lastName: String,
+    email: String
+  }
 
 });
 
