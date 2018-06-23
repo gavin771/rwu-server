@@ -9,7 +9,7 @@ module.exports.register = (body, cb) => {
   const password = body.password;
 
   if (!username || !password) {
-    return cb(null, { status: 422, error: 'You must provide an username and a password' })
+    return cb(null, { status: 422, error: 'You must provide a username and a password' })
   }
 
 
