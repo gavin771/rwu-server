@@ -17,7 +17,7 @@ const { notFound } = require('./utils/middleware');
 
 
 const app = express();
-app.use(logger(process.env.NODE_ENV));
+app.use(logger('dev'));
 app.use(cors());
 app.use(bodyParser.json({ type: 'application/json' }));
 app.use(compression());
