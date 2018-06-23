@@ -34,16 +34,16 @@ const jwtStrategy = new JwtStrategy(jwtOptions, (jwtPayload, next) => {
 
 //local config: used to login with a username/password
 const localStrategy = new LocalStrategy({
-  usernameField: 'email',
+  usernameField: 'username',
   passwordField: 'password'
 },
-  function (email, password, cb) {
-    UserModel.findOne({ email: email }, (err, user) => {
+  function (username, password, cb) {
+    UserModel.findOne({ username: username }, (err, user) => {
       if (err) {
         return cb(err);
       }
       if (!user || !user.verifyPasswordSync(password)) {
-        return cb(null, false, { message: 'Incorrect email or password.' });
+        return cb(null, false, { message: 'Incorrect username or password.' });
       }
 
       return cb(null, user, { message: 'Logged In Successfully' });

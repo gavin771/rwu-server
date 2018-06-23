@@ -3,6 +3,7 @@ const fs = require('fs')
 const passport = require('passport')
 const config = require('../config/constants')
 const User = require('../models/User')
+
 module.exports.register = (body, cb) => {
   const username = body.username;
   const password = body.password;
@@ -37,7 +38,6 @@ module.exports.register = (body, cb) => {
     });
   });
 }
-
 
 //should return a token for a valid user based on body
 module.exports.login = (req, cb) => {
